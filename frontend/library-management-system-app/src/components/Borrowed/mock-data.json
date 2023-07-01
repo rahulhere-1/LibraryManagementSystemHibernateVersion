@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "isbn": "BLKSJDF2345",
+    "title": "The forgotten time",
+    "memberId": "1",
+    "memberName": "santhos",
+    "issueDate": "21/04/23",
+    "dueDate" : "28/05/23"
+  },
+  {
+    "id": 2,
+    "isbn": "GGFSJDF2345",
+    "title": "The forgotten time",
+    "memberId": "2",
+    "memberName": "ramesh",
+    "issueDate": "18/04/23",
+    "dueDate" : "24/05/23"
+  },
+  {
+    "id": 3,
+    "isbn":"PLKSJDF2345",
+    "title": "The forgotten time",
+    "memberId": "3",
+    "memberName": "rajesh",
+    "issueDate": "11/04/23",
+    "dueDate" : "27/05/23"
+  },
+  {
+    "id": 4,
+    "isbn": "MFESJDF2345",
+    "title": "The forgotten time",
+    "memberId": "4",
+    "memberName": "rajiv",
+    "issueDate": "21/04/23",
+    "dueDate" : "28/05/23"
+  },
+  {
+    "id": 5,
+    "isbn": "Raymond Edwards",
+    "title": "The forgotten time",
+    "memberId": "5",
+    "memberName": "kamini",
+    "issueDate": "21/04/23",
+    "dueDate" : "28/05/23"
+  }
+]

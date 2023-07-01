@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "santhos",
+    "phone": "9876564321",
+    "address" : "bangalore"
+  },
+  {
+    "id": 2,
+    "name": "rajiv",
+    "phone": "9876564321",
+    "address" : "hyderbad"
+  },
+  {
+    "id": 3,
+    "name": "sarvesh",
+    "phone": "9876564321",
+    "address" : "delhi"
+  },
+  {
+    "id": 4,
+    "name": "remesh",
+    "phone": "9876564321",
+    "address" : "noida"
+  },
+  {
+    "id": 5,
+    "name": "rajesh",
+    "phone": "9815564321",
+    "address" : "delhi"
+  }
+]
