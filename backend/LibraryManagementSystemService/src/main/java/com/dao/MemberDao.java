@@ -21,4 +21,14 @@ public class MemberDao {
 		ss.close();
 		return members;
 	}
+	
+	public Member getMemberById(long id) {
+		Session ss = DatabaseConnetion.getFactory().openSession();
+		ss.beginTransaction();
+		Query<Member> q = ss.createQuery("from Member where id=:id", Member.class);
+		q.setParameter("id", id);
+		Member member = q.uniqueResult();
+		ss.close();
+		return member;
+	}
 }

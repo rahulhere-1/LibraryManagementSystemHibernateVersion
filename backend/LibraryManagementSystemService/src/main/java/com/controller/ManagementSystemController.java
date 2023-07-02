@@ -3,7 +3,12 @@ package com.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,10 +39,39 @@ public class ManagementSystemController {
 		return service.getAllBooks();
 	}
 	
+	@PostMapping("/library")
+	public void addBook(@RequestBody Book book ){
+		service.addBook(book);
+	}
+	
+	@PutMapping("/library")
+	public void updateBook(@RequestBody Book book ){
+		service.updateBook(book);
+	}
+	
+	@DeleteMapping("/library/{isbn}")
+	public void deleteBook(@PathVariable String isbn) {
+		service.deleteBook(isbn);
+	}
+	
+
+	
+	@GetMapping("/library/{isbn}")
+	public Book getBookById(@PathVariable String isbn){
+		return service.findBookById(isbn);
+	}
+
+	
 	@GetMapping("/members")
 	public List<Member> retrieveAllMembers(){
 		return service.getAllMembers();
 	}
+
+	@GetMapping("/members/{memberId}")
+	public Member getMemberById(@PathVariable long memberId){
+		return service.getMemberById(memberId);
+	}
+
 	
 	@GetMapping("/borrowed")
 	public List<Borrowed> retrieveAllBorrowers(){

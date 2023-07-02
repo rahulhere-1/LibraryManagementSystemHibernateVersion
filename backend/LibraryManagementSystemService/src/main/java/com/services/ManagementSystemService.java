@@ -27,8 +27,28 @@ public class ManagementSystemService {
 		return bookDao.getAllBooks();
 	}
 	
+	public Book findBookById(String isbn) {
+		return bookDao.findBookById(isbn);
+	}
+	
+	public void addBook(Book book) {
+		 bookDao.addBook(book);
+	}
+	
+	public void deleteBook(String isbn) {
+		 bookDao.deleteBook(isbn);
+	}
+	
+	public void updateBook(Book book) {
+		 bookDao.updateBook(book);
+	}
+	
 	public List<Member> getAllMembers(){
 		return memberDoa.getAllMembers();
+	}
+	
+	public Member getMemberById(long id){
+		return memberDoa.getMemberById(id);
 	}
 	
 	public List<Borrowed> getAllBorrowers(){
