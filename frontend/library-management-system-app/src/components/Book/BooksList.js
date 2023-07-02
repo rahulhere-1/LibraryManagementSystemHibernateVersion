@@ -50,7 +50,10 @@ const BooksList = () => {
 
     newContacts[index] = editedContact;
     axios
-      .put("http://localhost:8080/library", editedContact)
+      .put(
+        "http://localhost:8080/LibraryManagementSystemService/library",
+        editedContact
+      )
       .then((res) => {
         alert("Updated Successfully");
         setContacts(newContacts);
@@ -82,10 +85,16 @@ const BooksList = () => {
 
     const index = contacts.findIndex((contact) => contact.isbn === contactId);
     axios
-      .delete("http://localhost:8080/borrowed/isbn/" + contactId)
+      .delete(
+        "http://localhost:8080/LibraryManagementSystemService/borrowed/isbn/" +
+          contactId
+      )
       .then((res) => {
         axios
-          .delete("http://localhost:8080/library/" + contactId)
+          .delete(
+            "http://localhost:8080/LibraryManagementSystemService/library/" +
+              contactId
+          )
           .then((res) => {
             alert("Deleted Successfully");
           })

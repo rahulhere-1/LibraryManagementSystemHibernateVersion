@@ -98,5 +98,32 @@ public class ManagementSystemController {
 	}
 	
 	
+	@PostMapping("/borrowed")
+	public void addBorrower(@RequestBody Borrowed borrowed) {
+		service.addBorrower(borrowed);
+	}
+	
+	@PutMapping("/borrowed")
+	public void updateBorrower(@RequestBody Borrowed borrowed) {
+		service.addBorrower(borrowed);
+	}
+	
+	
+	@DeleteMapping("/borrowed/{id}")
+	public void deleteBorrower(@PathVariable long id) {
+		service.deleteBorrower(id);
+	}
+	
+	@DeleteMapping("/borrowed/isbn/{isbn}")
+	public void deleteBorrowerByBookId(@PathVariable String isbn) {
+		service.deleteBorrowerByIsbn(isbn);
+	}
+	
+	@DeleteMapping("/borrowed/member/{memberId}")
+	public void deleteBorrowerByBookId(@PathVariable long id) {
+		service.deleteBorrowerByMemberId(id);
+	}
+	
+	
 
 }

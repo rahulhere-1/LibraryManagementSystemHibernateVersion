@@ -14,7 +14,10 @@ const AddMembers = () => {
     },
     onSubmit: (values) => {
       axios
-        .post("http://localhost:8080/members", values)
+        .post(
+          "http://localhost:8080/LibraryManagementSystemService/members",
+          values
+        )
         .then(function (response) {
           console.log(response);
           console.log(values);

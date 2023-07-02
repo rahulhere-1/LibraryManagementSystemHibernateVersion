@@ -14,11 +14,17 @@ const AddBorrower = () => {
     onSubmit: (values) => {
       const data = {};
       axios
-        .get("http://localhost:8080/library/" + values.isbn)
+        .get(
+          "http://localhost:8080/LibraryManagementSystemService/library/" +
+            values.isbn
+        )
         .then((res) => {
           data.book = res.data;
           axios
-            .get("http://localhost:8080/members/" + values.id)
+            .get(
+              "http://localhost:8080/LibraryManagementSystemService/members/" +
+                values.id
+            )
             .then((res) => {
               data.member = res.data;
               data.issueDate = values.issueDate;
@@ -26,7 +32,10 @@ const AddBorrower = () => {
               data.id = Math.floor(Math.random() * 90000000) + 10000000;
               //console.log("this is line 30", data);
               axios
-                .post("http://localhost:8080/borrowed", data)
+                .post(
+                  "http://localhost:8080/LibraryManagementSystemService/borrowed",
+                  data
+                )
                 .then(function (response) {
                   alert("submitted successfully");
                   window.location.reload(true);

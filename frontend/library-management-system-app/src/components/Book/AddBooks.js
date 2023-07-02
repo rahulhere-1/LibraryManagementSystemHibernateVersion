@@ -13,7 +13,10 @@ const AddBooks = () => {
     },
     onSubmit: (values) => {
       axios
-        .post("http://localhost:8080/library", values)
+        .post(
+          "http://localhost:8080/LibraryManagementSystemService/library",
+          values
+        )
         .then(function (response) {
           alert("submitted successfully");
           window.location.reload(true);

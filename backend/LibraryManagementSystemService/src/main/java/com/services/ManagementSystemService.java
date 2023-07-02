@@ -42,7 +42,8 @@ public class ManagementSystemService {
 	public void updateBook(Book book) {
 		 bookDao.updateBook(book);
 	}
-	
+	/*  Member Table Methods -----------------------------------------*/
+
 	public List<Member> getAllMembers(){
 		return memberDao.getAllMembers();
 	}
@@ -62,9 +63,29 @@ public class ManagementSystemService {
 	public Member getMemberById(long id){
 		return memberDao.getMemberById(id);
 	}
+	/*  Borrowed Table Methods -----------------------------------------*/
 	
 	public List<Borrowed> getAllBorrowers(){
 		return borrowedDao.getAllBorrowers();
+	}
+	
+	public void addBorrower(Borrowed borrowed) {
+		borrowedDao.addBorrower(borrowed);
+	}
+	
+	public void updateBorrower(Borrowed borrowed) {
+		borrowedDao.updateBorrower(borrowed);
+	}
+	public void deleteBorrower(long id) {
+		borrowedDao.deleteBorrower(id);
+	}
+	
+	public void deleteBorrowerByIsbn(String isbn) {
+		borrowedDao.deleteBorrowerByIsbn(isbn);
+	}
+	
+	public void deleteBorrowerByMemberId(long id) {
+		borrowedDao.deleteBorrowerByMemberId(id);
 	}
 	
 }

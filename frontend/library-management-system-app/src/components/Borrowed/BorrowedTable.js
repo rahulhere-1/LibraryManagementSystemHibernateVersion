@@ -77,7 +77,7 @@ const BorrowedTable = () => {
     obj.issueDate = editFormData.issueDate;
     obj.dueDate = editFormData.dueDate;
     axios
-      .put("http://localhost:8080/borrowed", obj)
+      .put("http://localhost:8080/LibraryManagementSystemService/borrowed", obj)
       .then((res) => {
         alert("Updated Successfully");
         setContacts(newContacts);
@@ -109,7 +109,7 @@ const BorrowedTable = () => {
   const handleDeleteClick = (contactId) => {
     const newContacts = [...contacts];
     axios
-      .delete("http://localhost:8080/borrowed/" + contactId)
+      .delete("http://localhost:8080/LibraryManagementSystemService/borrowed/" + contactId)
       .then((res) => alert("Deleted Successfully"))
       .catch((err) => {
         alert("Something went wrong");

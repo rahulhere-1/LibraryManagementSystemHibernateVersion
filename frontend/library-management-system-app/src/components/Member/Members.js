@@ -51,7 +51,10 @@ const BorrowedTable = () => {
 
     newContacts[index] = editedContact;
     axios
-      .put("http://localhost:8080/members", editedContact)
+      .put(
+        "http://localhost:8080/LibraryManagementSystemService/members",
+        editedContact
+      )
       .then((res) => {
         alert("Updated Successfully");
         setContacts(newContacts);
@@ -82,10 +85,16 @@ const BorrowedTable = () => {
   const handleDeleteClick = (contactId) => {
     const newContacts = [...contacts];
     axios
-      .delete("http://localhost:8080/borrowed/member/" + contactId)
+      .delete(
+        "http://localhost:8080/borrowed/LibraryManagementSystemService/member/" +
+          contactId
+      )
       .then((res) => {
         axios
-          .delete("http://localhost:8080/members/" + contactId)
+          .delete(
+            "http://localhost:8080/LibraryManagementSystemService/members/" +
+              contactId
+          )
           .then((res) => alert("Deleted Successfully"))
           .catch((err) => alert("something went wrong"));
       })
