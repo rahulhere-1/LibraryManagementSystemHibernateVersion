@@ -1,4 +1,4 @@
-## #Library Management System Hibernate Version
+## Library Management System Hibernate Version
 
 This is a simple application built for learning purpose. It manages books in library.
 
@@ -7,9 +7,11 @@ This management application has three main tables - Books , Borrowed , Members
 
 Tools used is exactly same as in Library Management System that can be found on my repository list. The only change made is for interacting with MySQL Database Hibernate ORM is used instead of Spring Data JPA.
 
-Frontend : React
-Backend : Spring Boot , Hibernate
-Database : MySQL
+
+Frontend : React   
+Backend : Spring Boot , Hibernate     
+Database : MySQL     
+
 
 Schema :
 
