@@ -18,7 +18,7 @@ public class ManagementSystemService {
 	private BookDao bookDao;
 	
 	@Autowired
-	private MemberDao memberDoa;
+	private MemberDao memberDao;
 	
 	@Autowired
 	private BorrowedDao borrowedDao;
@@ -44,11 +44,23 @@ public class ManagementSystemService {
 	}
 	
 	public List<Member> getAllMembers(){
-		return memberDoa.getAllMembers();
+		return memberDao.getAllMembers();
+	}
+	
+	public void addMember(Member member) {
+		memberDao.addMember(member);
+	}
+	
+	public void deleteMember(long id) {
+		memberDao.deleteMember(id);
+	}
+	
+	public void updateMember(Member member) {
+		memberDao.updateMember(member);
 	}
 	
 	public Member getMemberById(long id){
-		return memberDoa.getMemberById(id);
+		return memberDao.getMemberById(id);
 	}
 	
 	public List<Borrowed> getAllBorrowers(){

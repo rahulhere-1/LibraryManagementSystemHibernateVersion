@@ -34,6 +34,8 @@ public class ManagementSystemController {
 		return "try /library";
 	}
 	
+	/*  Books REST APIs -------------------------------------------------  */
+	
 	@GetMapping("/library")
 	public List<Book> retrieveAllBooks(){
 		return service.getAllBooks();
@@ -55,23 +57,40 @@ public class ManagementSystemController {
 	}
 	
 
-	
 	@GetMapping("/library/{isbn}")
 	public Book getBookById(@PathVariable String isbn){
 		return service.findBookById(isbn);
 	}
 
+	/*  Member REST APIs   ----------------------------------------------  */
 	
 	@GetMapping("/members")
 	public List<Member> retrieveAllMembers(){
 		return service.getAllMembers();
 	}
+	
+	@PostMapping("/members")
+	public void addMember(@RequestBody Member member){
+		service.addMember(member);
+	}
+	
+	@PutMapping("/members")
+	public void updateMember(@RequestBody Member member){
+		service.updateMember(member);
+	}
+	
+	@DeleteMapping("/members/{id}")
+	public void deleteMember(@PathVariable long id) {
+		service.deleteMember(id);
+	}
+	
 
 	@GetMapping("/members/{memberId}")
 	public Member getMemberById(@PathVariable long memberId){
 		return service.getMemberById(memberId);
 	}
 
+	/*  Borrowed REST APIs  -------------------------------------------  */
 	
 	@GetMapping("/borrowed")
 	public List<Borrowed> retrieveAllBorrowers(){

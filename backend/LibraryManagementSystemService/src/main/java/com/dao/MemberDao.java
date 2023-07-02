@@ -7,6 +7,7 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.connection.DatabaseConnetion;
+import com.entities.Book;
 import com.entities.Member;
 
 @Repository
@@ -30,5 +31,31 @@ public class MemberDao {
 		Member member = q.uniqueResult();
 		ss.close();
 		return member;
+	}
+	
+	public void addMember(Member member) {
+		Session ss = DatabaseConnetion.getFactory().openSession();
+		ss.beginTransaction();
+		ss.save(member);
+		ss.getTransaction().commit();
+		ss.close();
+	}
+	
+	public void deleteMember(long id) {
+		Session ss = DatabaseConnetion.getFactory().openSession();
+		ss.beginTransaction();
+		Query<Book> q = ss.createQuery("delete from Member where id=:id");
+		q.setParameter("id", id);
+		q.executeUpdate();
+		ss.getTransaction().commit();
+		ss.close();
+	}
+	
+	public void updateMember(Member member) {
+		Session ss = DatabaseConnetion.getFactory().openSession();
+		ss.beginTransaction();
+		ss.update(member);
+		ss.getTransaction().commit();
+		ss.close();
 	}
 }
